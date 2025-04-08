@@ -1,16 +1,14 @@
-<script setup>
-</script>
 <template>
   <div class="iframe-container">
-    <iframe title="demo_3"
-      src="https://app.powerbi.com/view?r=eyJrIjoiZGY5M2VkYmYtOGFiZC00ZGQxLTk4ZjgtMTczYmE2NmM5NWNjIiwidCI6IjFlZjg1NDQ4LTIwYzItNDQwYS04NzFkLTRmM2RlZjExMDQyZiIsImMiOjEwfQ%3D%3D"
+    <iframe title="demo_Home"
+      src="https://app.powerbi.com/view?r=eyJrIjoiMzQ4ZmU4ZDItNDljMi00MTA4LWIzNzMtYzA4ZTQ2NjkyNWZkIiwidCI6IjFlZjg1NDQ4LTIwYzItNDQwYS04NzFkLTRmM2RlZjExMDQyZiIsImMiOjEwfQ%3D%3D"
       frameborder="0" allowFullScreen="true"></iframe>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'PartThree',
+  name: 'PartHome',
   components: {
 
   },
@@ -24,8 +22,8 @@ export default {
 <style scoped>
 .iframe-container {
   position: relative;
-  width: 100%;
   margin: 1.25rem; /* 20px */
+  width: 100%;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;

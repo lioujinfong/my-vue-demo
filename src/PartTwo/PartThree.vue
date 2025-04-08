@@ -3,7 +3,7 @@
 <template>
   <div class="iframe-container">
     <iframe title="demo_3"
-      src="https://app.powerbi.com/view?r=eyJrIjoiYjhkMzRmOWItYWJhYy00YTY4LTk3NDItZTY0YmI1MTE5M2U2IiwidCI6IjFlZjg1NDQ4LTIwYzItNDQwYS04NzFkLTRmM2RlZjExMDQyZiIsImMiOjEwfQ%3D%3D"
+      src="https://app.powerbi.com/view?r=eyJrIjoiMDYyMDc4ODYtNmMwZi00ZDExLTllOWQtNjE1NGVkYjhjYzM2IiwidCI6IjFlZjg1NDQ4LTIwYzItNDQwYS04NzFkLTRmM2RlZjExMDQyZiIsImMiOjEwfQ%3D%3D"
       frameborder="0" allowFullScreen="true"></iframe>
   </div>
 </template>

@@ -36,6 +36,12 @@ export default {
           color: '#D10000' // 主頁的顏色
         },
         {
+          title: 'Home',
+          path: '/parthome',
+          icon: 'bi-calendar-check',
+          color: '#2894FF	' // Home 的顏色
+        },
+        {
           title: 'HCM',
           path: '/partone',
           icon: 'bi-calendar-check',

@@ -6,7 +6,7 @@
         <div class="circle">
           <img src="@/assets/mcu_logo.png" alt="Logo" class="circle-img">
         </div>
-        <a class="navbar-brand">浩雲商務科技</a>
+        <a class="navbar-brand">灝元商務科技</a>
       </div>
       <!-- 右側會員登入 -->
       <div class="user-info">
