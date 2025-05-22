@@ -6,18 +6,32 @@
         <div class="circle">
           <img src="@/assets/mcu_logo.png" alt="Logo" class="circle-img">
         </div>
-        <a class="navbar-brand">銘傳大學-國際生留台追蹤管理平台</a>
+        <a class="navbar-brand">{{ $t('navbar.title') }}</a>
       </div>
       <!-- 右側會員登入 -->
       <div class="user-info">
         <img src="@/assets/user-icon.png" alt="User Icon" class="user-icon">
-        <span class="user-name">會員名稱</span>
+        <span class="user-name">{{ $t('navbar.user') }}</span>
       </div>
+      <!-- 語言切換 -->
+        <div class="lang-switch">
+          <button class="lang-btn" @click="switchLang('zh')">中文</button>
+          <button class="lang-btn" @click="switchLang('en')">EN</button>
+        </div>
+        
     </div>
   </nav>
 </template>
 
-<script>
+<script setup>
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
+
+function switchLang(lang) {
+  locale.value = lang
+  localStorage.setItem('lang', lang)
+}
 </script>
 
 <style scoped>
@@ -88,5 +102,40 @@
   color: white; /* 保持文字顏色不變 */
   font-size: 1.125rem; /* 18px = 1.125rem */
   font-weight: bold;
+}
+/* 新增語言按鈕區域 */
+.lang-switch {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-btn {
+  background-color: white;
+  border: none;
+  color: #fa5015;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lang-btn:hover {
+  background-color: #ffd6c2;
+}
+
+
+.back-button {
+  background-color: white;
+  border: none;
+  color: #fa5015;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #ffd6c2;
 }
 </style>

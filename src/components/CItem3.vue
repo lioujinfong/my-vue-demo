@@ -1,7 +1,7 @@
 <template>
   <div class="section-title">
     <div class="title-box"></div>
-    <h2>熱門調查(10)</h2>
+    <h2>{{ $t('carousel.title', { count: 10 }) }}</h2>
   </div>
   <div class="card-carousel-wrapper">
     <button 
@@ -21,7 +21,7 @@
             <router-link :to="item.routerlink">
               <img :src="item.image" />
               <div class="card-carousel--card--footer">
-                <p>{{ item.name }}</p>
+                <p>{{ $t(`carousel.items.${item.key}`) }}</p>
                 <p>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
@@ -58,12 +58,12 @@ export default {
     const cardWidth = ref(0); // 每個卡片的寬度
 
     const items = ref([
-      { routerlink: "/workone", image: require(`@/assets/mcu2.png`), name: '工作職業類型1', tag: "123" },
-      { routerlink: "/worktwo", image: require(`@/assets/mcu3.png`), name: '工作職業類型2', tag: "12" },
-      { routerlink: "/workone", image: require(`@/assets/mcu1.jpg`), name: '工作職業類型3', tag: "123" },
-      { routerlink: "/workone", image: require(`@/assets/mcu2.png`), name: '工作職業類型4', tag: "12" },
-      { routerlink: "/worktwo", image: require(`@/assets/mcu3.png`), name: '工作職業類型5', tag: "12" },
-    ]);
+  { key: "type1", routerlink: "/workone", image: require(`@/assets/mcu2.png`), tag: "123" },
+  { key: "type2", routerlink: "/worktwo", image: require(`@/assets/mcu3.png`), tag: "12" },
+  { key: "type3", routerlink: "/workone", image: require(`@/assets/mcu1.jpg`), tag: "123" },
+  { key: "type4", routerlink: "/workone", image: require(`@/assets/mcu2.png`), tag: "12" },
+  { key: "type5", routerlink: "/worktwo", image: require(`@/assets/mcu3.png`), tag: "12" }
+]);
 
     const atEndOfList = computed(() => {
       return currentOffset.value <= -(paginationFactor.value * (items.value.length - windowSize.value));

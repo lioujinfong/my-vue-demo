@@ -11,7 +11,7 @@
             <i class="bi" :class="item.icon"></i>
           </div>
           <div class="card-item">
-            <div class="card-title"><h3>{{ item.title }}</h3></div>
+            <div class="card-title"><h3>{{ $t(item.titleKey) }}</h3></div>
             <div class="card-number">
               <p class="number">{{ item.number }}</p>
               <div class="number-line"></div>
@@ -29,43 +29,43 @@ export default {
   data() {
     return {
       items: [
-        {
-          title: '主頁',
-          path: '/',
-          icon: 'bi-house-fill',
-          color: '#D10000' // 主頁的顏色
-        },
-        {
-          title: 'Home',
-          path: '/parthome',
-          icon: 'bi-calendar-check',
-          color: '#2894FF	' // Home 的顏色
-        },
-        {
-          title: 'HCM',
-          path: '/partone',
-          icon: 'bi-calendar-check',
-          color: '#0035CE' // HCM 的顏色
-        },
-        {
-          title: 'Cost & Expense',
-          path: '/parttwo',
-          icon: 'bi-diagram-3-fill',
-          color: '#FDC607' // Cost & Expense 的顏色
-        },
-        {
-          title: 'Analysis',
-          path: '/partthree',
-          icon: 'bi-layout-text-window-reverse',
-          color: '#4E9E47' // Analysis 的顏色
-        },
-        {
-          title: 'Tax & Fee',
-          path: '/partfour',
-          icon: 'bi bi-layers',
-          color: '#FA5015' // Tax & Fee 的顏色
-        }
-      ]
+          {
+            titleKey: 'sidebar.partAll',
+            path: '/partAll',
+            icon: 'bi-house-fill',
+            color: '#D10000'
+          },
+          {
+            titleKey: 'sidebar.home',
+            path: '/parthome',
+            icon: 'bi-calendar-check',
+            color: '#2894FF'
+          },
+          {
+            titleKey: 'sidebar.hcm',
+            path: '/partone',
+            icon: 'bi-calendar-check',
+            color: '#0035CE'
+          },
+          {
+            titleKey: 'sidebar.cost',
+            path: '/parttwo',
+            icon: 'bi-diagram-3-fill',
+            color: '#FDC607'
+          },
+          {
+            titleKey: 'sidebar.analysis',
+            path: '/partthree',
+            icon: 'bi-layout-text-window-reverse',
+            color: '#4E9E47'
+          },
+          {
+            titleKey: 'sidebar.tax',
+            path: '/partfour',
+            icon: 'bi bi-layers',
+            color: '#FA5015'
+          }
+        ]
     };
   },
   methods: {

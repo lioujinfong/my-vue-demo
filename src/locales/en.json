@@ -1,0 +1,48 @@
+{
+  "navbar": {
+    "title": "MCU - International Student Stay Management System",
+    "user": "MemberName",
+    "backToControl": "Back to Dashboard"
+  },
+  "footer": {
+    "locationInfoTitle": "Campus Information",
+    "viewCountTitle": "View Count",
+    "taipei": "Taipei Campus",
+    "taoyuan": "Taoyuan Campus",
+    "jiho": "Jiho Campus",
+    "kinmen": "Kinmen Campus",
+    "usCampus": "U.S. Campus (Michigan Location)",
+    "taipeiAddress": "No. 250, Sec. 5, Zhongshan N. Rd., Taipei | 02-2882-4564",
+    "taoyuanAddress": "No. 5, Deming Rd., Guishan Dist., Taoyuan | 03-350-7001",
+    "jihoAddress": "4F., No. 130, Jihe Rd., Taipei | 02-2882-4564",
+    "kinmenAddress": "No. 105, Deming Rd., Jinsha Township, Kinmen | 082-355-233",
+    "usCampusAddress": "Gilbertson Hall, Saginaw Valley State University, 7400 Bay Road, Saginaw, MI 48710 U.S.A. Telephone: 1-989-964-2497 (U.S.); +886 2 2882-4564 (Taiwan)"
+  },
+   "carousel": {
+    "title": "Top Surveys ({count})",
+    "items": {
+      "type1": "Job Type 1",
+      "type2": "Job Type 2",
+      "type3": "Job Type 3",
+      "type4": "Job Type 4",
+      "type5": "Job Type 5"
+    }
+  },
+  "home": {
+    "welcome": "Welcome to the Homepage",
+    "description": "You can put announcements, charts, or welcome info here."
+  },
+  "sidebar": {
+    "partAll": "Home",
+    "home": "Student Home",
+    "hcm": "HCM",
+    "cost": "Cost & Expense",
+    "analysis": "Analysis",
+    "tax": "Tax & Fee"
+  },
+   "controller": {
+    "title": "Welcome to the MCU System",
+    "subtitle": "Click the button below to enter",
+    "enter": "Enter the International Student Platform"
+  }
+}

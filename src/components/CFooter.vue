@@ -5,12 +5,12 @@
       <div class="card-content">
         <!-- 左側校區資訊 -->
         <div class="location-info">
-          <h3>校區資訊</h3>
-          <p><strong>台北校區</strong> - 臺北市中山北路五段250號 | 02-2882-4564</p>
-          <p><strong>桃園校區</strong> - 桃園市龜山區德明路5號 | 03-350-7001</p>
-          <p><strong>基河校區</strong> - 臺北市基河路130號4樓 | 02-2882-4564</p>
-          <p><strong>金門校區</strong> - 金門縣金沙鎮德明路105號 | 082-355-233</p>
-          <p><strong>美國分校(Michigan Location)</strong> - Gilbertson Hall, Saginaw Valley State University, 7400 Bay Road, Saginaw, MI 48710 U.S.A. <br />
+          <h3>{{ $t('footer.locationInfoTitle') }}</h3>
+          <p><strong>{{ $t('footer.taipei') }}</strong> - {{ $t('footer.taipeiAddress') }}</p>
+          <p><strong>{{ $t('footer.taoyuan') }}</strong> - {{ $t('footer.taoyuanAddress') }}</p>
+          <p><strong>{{ $t('footer.jiho') }}</strong> - {{ $t('footer.jihoAddress') }}</p>
+          <p><strong>{{ $t('footer.kinmen') }}</strong> - {{ $t('footer.kinmenAddress') }}</p>
+          <p><strong>{{ $t('footer.usCampus') }}</strong> - {{ $t('footer.usCampusAddress') }} <br />
             Telephone: 1-989-964-2497 (U.S.); +886 2 2882-4564 (Taiwan)
           </p>
         </div>
@@ -18,7 +18,7 @@
         <!-- 右側信息 -->
         <div class="right-info">
           <!-- 瀏覽人次 -->
-          <h3>瀏覽人次</h3>
+          <h3>{{ $t('footer.viewCountTitle') }}</h3>
           <div class="view-count">
             <p>
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
