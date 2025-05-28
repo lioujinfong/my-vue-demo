@@ -8,8 +8,10 @@ import { faHome, faCamera } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap-icons/font/bootstrap-icons.css'
 //語系
 import { createI18n } from 'vue-i18n'
-import zh from './locales/zh.json'
-import en from './locales/en.json'
+import zhISP from './locales/isp/zh.json'
+import enISP from './locales/isp/en.json'
+import zhSEP from './locales/sep/zh.json'
+import enSEP from './locales/sep/en.json'
 
 
 library.add(faHome, faCamera); // 添加需要的圖標
@@ -19,13 +21,13 @@ const app = createApp(App)
 //語系
 const savedLocale = localStorage.getItem('lang') || 'zh'
 const i18n = createI18n({
-  legacy: false, // 啟用 Composition API 模式
+  legacy: false,
   globalInjection: true,
   locale: savedLocale,
   fallbackLocale: 'en',
   messages: {
-    zh,
-    en
+    zh: { ...zhISP, ...zhSEP },
+    en: { ...enISP, ...enSEP }
   }
 })
 

@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "title": "銘傳大學-國際生留台追蹤管理平台",
+    "title": "好大學-國際生留台追蹤管理平台",
     "user": "會員名稱",
     "backToControl": "返回控制頁"
   },
@@ -32,20 +32,18 @@
     "welcome": "歡迎來到首頁",
     "description": "這裡可以放置公告、統計圖表或歡迎資訊。"
   },
-  "sidebar": {
+  "sidebar_isp": {
     "partAll": "首頁",
-    "home": "學生首頁",
-    "hcm": "人資管理",
-    "cost": "成本與費用",
-    "analysis": "分析",
-    "tax": "稅費管理"
+    "home": "學生主頁",
+    "hcm": "留台總覽",
+    "cost": "任職概況",
+    "analysis": "收入分布",
+    "tax": "留台分析"
   },
   "controller": {
-    "title": "歡迎來到 MCU 系統",
+    "title": "歡迎",
     "subtitle": "點擊下方按鈕進入系統",
-    "enter": "進入國際生留台追蹤管理平台"
+    "enter": "進入國際生留台追蹤管理平台",
+    "salaryPlatform": "薪資概算平台"
   }
-  
-
-
 }

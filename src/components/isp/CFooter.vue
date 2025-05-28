@@ -47,7 +47,7 @@
 
           <!-- 右下角logo -->
           <div class="logo">
-            <img src="../assets/MCUlogo.png" alt="Logo" />
+            <img src="@/assets/MCUlogo.png" alt="Logo" />
           </div>
         </div>
       </div>

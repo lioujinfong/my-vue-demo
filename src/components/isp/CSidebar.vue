@@ -30,37 +30,37 @@ export default {
     return {
       items: [
           {
-            titleKey: 'sidebar.partAll',
+            titleKey: 'sidebar_isp.partAll',
             path: '/partAll',
             icon: 'bi-house-fill',
             color: '#D10000'
           },
           {
-            titleKey: 'sidebar.home',
+            titleKey: 'sidebar_isp.home',
             path: '/parthome',
-            icon: 'bi-calendar-check',
+            icon: 'bi-person-fill',
             color: '#2894FF'
           },
           {
-            titleKey: 'sidebar.hcm',
+            titleKey: 'sidebar_isp.hcm',
             path: '/partone',
-            icon: 'bi-calendar-check',
+            icon: 'bi-graph-up-arrow',
             color: '#0035CE'
           },
           {
-            titleKey: 'sidebar.cost',
+            titleKey: 'sidebar_isp.cost',
             path: '/parttwo',
             icon: 'bi-diagram-3-fill',
             color: '#FDC607'
           },
           {
-            titleKey: 'sidebar.analysis',
+            titleKey: 'sidebar_isp.analysis',
             path: '/partthree',
             icon: 'bi-layout-text-window-reverse',
             color: '#4E9E47'
           },
           {
-            titleKey: 'sidebar.tax',
+            titleKey: 'sidebar_isp.tax',
             path: '/partfour',
             icon: 'bi bi-layers',
             color: '#FA5015'

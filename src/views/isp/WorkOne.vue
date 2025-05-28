@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import CFooter from '../components/CFooter.vue'
+import CFooter from '../../components/isp/CFooter.vue'
 
 export default {
   name: 'WorkOne',

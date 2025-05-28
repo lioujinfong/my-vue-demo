@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "title": "MCU - International Student Stay Management System",
+    "title": "Best University - International Student Stay Management System",
     "user": "MemberName",
     "backToControl": "Back to Dashboard"
   },
@@ -32,17 +32,18 @@
     "welcome": "Welcome to the Homepage",
     "description": "You can put announcements, charts, or welcome info here."
   },
-  "sidebar": {
+  "sidebar_isp": {
     "partAll": "Home",
-    "home": "Student Home",
-    "hcm": "HCM",
-    "cost": "Cost & Expense",
-    "analysis": "Analysis",
-    "tax": "Tax & Fee"
+    "home": "Student Dashboard",
+    "hcm": "Stay-in-Taiwan Overview",
+    "cost": "Employment Overview",
+    "analysis": "Income Distribution",
+    "tax": "Stay-in-Taiwan Analysis"
   },
    "controller": {
-    "title": "Welcome to the MCU System",
+    "title": "Welcome",
     "subtitle": "Click the button below to enter",
-    "enter": "Enter the International Student Platform"
+    "enter": "Enter the International Student Platform",
+    "salaryPlatform": "Salary Estimation Platform"
   }
 }

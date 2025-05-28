@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import CCarousel from '../components/CCarousel.vue'
-import CCarousel2 from '../components/CCarousel2.vue'
-import CItem2 from '../components/CItem2.vue'
-import CItem3 from '../components/CItem3.vue'
-import CFooter from '../components/CFooter.vue'
+import CCarousel from '../../components/isp/CCarousel.vue'
+import CCarousel2 from '../../components/isp/CCarousel2.vue'
+import CItem2 from '../../components/isp/CItem2.vue'
+import CItem3 from '../../components/isp/CItem3.vue'
+import CFooter from '../../components/isp/CFooter.vue'
 
 export default {
   name: 'PartOne',

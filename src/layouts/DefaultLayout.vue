@@ -8,7 +8,7 @@
           <CSidebar />
         </div>
         <div class="col-12 col-md-9 col-lg-10">
-          <slot /> <!-- 重點！ -->
+          <slot />
         </div>
       </div>
     </div>
@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import CNavbar from '@/components/CNavbar.vue'
-import CSidebar from '@/components/CSidebar.vue'
+import CNavbar from '@/components/isp/CNavbar.vue'
+import CSidebar from '@/components/isp/CSidebar.vue'
 
 export default {
   name: 'DefaultLayout',
@@ -27,3 +27,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+</style>

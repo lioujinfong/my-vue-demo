@@ -1,6 +1,6 @@
 <template>
   <div class="iframe-container">
-    <iframe title="demo_Home"
+    <iframe title="demo"
       src="https://app.powerbi.com/view?r=eyJrIjoiMTRiOGUxMTUtMTcxZS00YmI5LWE0M2ItODgwMjg4YWZjYmZmIiwidCI6IjFlZjg1NDQ4LTIwYzItNDQwYS04NzFkLTRmM2RlZjExMDQyZiIsImMiOjEwfQ%3D%3D"
       frameborder="0" allowFullScreen="true"></iframe>
   </div>
@@ -10,7 +10,6 @@
 export default {
   name: 'PartHome',
   components: {
-
   },
   data() {
     return {
@@ -22,8 +21,8 @@ export default {
 <style scoped>
 .iframe-container {
   position: relative;
-  margin: 1.25rem; /* 20px */
   width: 100%;
+  margin: 1.25rem; /* 20px */
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;

@@ -5,7 +5,7 @@
         <input type="radio" name="radio-buttons" id="img-1" checked />
         <li class="slide-container">
           <div class="slide-image">
-            <img src="../assets/mcu1.jpg">
+            <img src="@/assets/mcu1.jpg">
           </div>
           <div class="carousel-controls">
             <label for="img-3" class="prev-slide">
@@ -19,7 +19,7 @@
         <input type="radio" name="radio-buttons" id="img-2" />
         <li class="slide-container">
           <div class="slide-image">
-            <img src="../assets/mcu2.png">
+            <img src="@/assets/mcu2.png">
           </div>
           <div class="carousel-controls">
             <label for="img-1" class="prev-slide">
@@ -33,7 +33,7 @@
         <input type="radio" name="radio-buttons" id="img-3" />
         <li class="slide-container">
           <div class="slide-image">
-            <img src="../assets/mcu3.png">
+            <img src="@/assets/mcu3.png">
           </div>
           <div class="carousel-controls">
             <label for="img-2" class="prev-slide">

@@ -9,8 +9,14 @@
     <h1>{{ $t('controller.title') }}</h1>
     <p>{{ $t('controller.subtitle') }}</p>
 
+    <!-- 國際生留台追蹤管理平台按鈕 -->
     <router-link to="/partAll" class="enter-button">
       {{ $t('controller.enter') }}
+    </router-link>
+
+    <!-- 薪資概算平台按鈕 -->
+    <router-link to="/sep/home" class="enter-button">
+      {{ $t('controller.salaryPlatform') }}
     </router-link>
   </div>
 </template>
@@ -68,6 +74,8 @@ function switchLang(lang) {
   border-radius: 0.5rem;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  width: 260px; /* 統一按鈕寬度 */
+  text-align: center;
 }
 
 .enter-button:hover {
