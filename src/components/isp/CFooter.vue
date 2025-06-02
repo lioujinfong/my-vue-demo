@@ -171,4 +171,28 @@ export default {
     display: none;
   }
 }
+/*RWD*/ 
+@media (max-width: 48rem) {
+  .location-info h3,
+  .right-info h3 {
+    font-size: 1.125rem; /* 標題字體縮小 */
+  }
+
+  .right-info p {
+    font-size: 0.875rem; /* 一般文字縮小 */
+  }
+
+  .view-count .count {
+    font-size: 1rem; /* 瀏覽數字縮小 */
+  }
+
+  .social-icons svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .logo img {
+    max-width: 10rem; /* Logo 小一點 */
+  }
+}
 </style>

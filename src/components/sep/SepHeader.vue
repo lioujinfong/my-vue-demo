@@ -123,4 +123,51 @@ function switchLang(lang) {
 .lang-btn:hover {
   background-color: #ffd6c2;
 }
+
+/*RWD*/
+@media (max-width: 768px) {
+  .navbar > .container-fluid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .left-section {
+    margin-bottom: 0.5rem;
+  }
+
+  .user-info,
+  .lang-switch {
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .circle {
+    width: 3rem;
+    height: 3rem;
+    margin: 0.5rem 0.75rem 0.5rem 0;
+  }
+
+  .circle-img {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .user-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .user-name {
+    font-size: 1rem;
+  }
+
+  .lang-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
 </style>

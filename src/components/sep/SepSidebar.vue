@@ -1,26 +1,35 @@
 <template>
-  <div class="card-carousel-wrapper">
-    <router-link
-      :to="item.path"
-      v-for="item in items"
-      :key="item.title"
-      class="card-link"
-    >
-      <div
-        class="card"
-        :class="{ active: isActive(item.path) }"
-        :style="getCardStyle(item.path)"
+  <div class="sidebar-wrapper">
+    <!-- 選單按鈕：僅手機顯示 -->
+    <button class="menu-toggle d-md-none" @click="toggleMenu">
+      ☰ 選單
+    </button>
+
+    <!-- 電腦版卡片列表 -->
+    <div class="card-carousel-wrapper" v-if="!isMobile || showMenu">
+      <router-link
+        :to="item.path"
+        v-for="item in items"
+        :key="item.title"
+        class="card-link"
+        @click="onSelect"
       >
-        <div class="card-content">
-          <div class="card-icon">
-            <i class="bi" :class="item.icon"></i>
-          </div>
-          <div class="card-item">
-            <div class="card-title"><h3>{{ $t(item.titleKey) }}</h3></div>
+        <div
+          class="card"
+          :class="{ active: isActive(item.path) }"
+          :style="getCardStyle(item.path)"
+        >
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="bi" :class="item.icon"></i>
+            </div>
+            <div class="card-item">
+              <div class="card-title"><h3>{{ $t(item.titleKey) }}</h3></div>
+            </div>
           </div>
         </div>
-      </div>
-    </router-link>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -60,8 +69,17 @@ export default {
           icon: 'bi-receipt-cutoff', // 稅務建議用發票 icon
           color: '#FA5015'
         }
-      ]
+      ],
+      isMobile: false,
+      showMenu: false
     }
+  },
+   mounted() {
+    this.isMobile = window.innerWidth <= 768
+    window.addEventListener('resize', this.checkMobile)
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkMobile)
   },
   methods: {
     isActive(path) {
@@ -76,6 +94,18 @@ export default {
         }
       }
       return {}
+    },
+    toggleMenu() {
+      this.showMenu = !this.showMenu;
+    },
+    onSelect() {
+      if (this.isMobile) this.showMenu = false
+    },
+    checkMobile() {
+      this.isMobile = window.innerWidth <= 768
+      if (!this.isMobile) {
+        this.showMenu = false
+      }
     }
   }
 }
@@ -131,5 +161,45 @@ a {
 
 .card-icon i {
   font-size: 60px;
+}
+/*RWD*/ 
+@media (max-width: 768px) {
+  .card {
+    width: 10rem;
+    height: 6.5rem;
+    margin: 0.75rem;
+  }
+
+  .card-title h3 {
+    font-size: 1rem;
+  }
+
+  .card-icon i {
+    font-size: 40px;
+  }
+}
+
+.sidebar-wrapper {
+  width: 100%;
+}
+
+/* 漢堡按鈕樣式 */
+.menu-toggle {
+  background-color: #fa5015;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: none; /* 預設不顯示，在手機上才顯示 */
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
 }
 </style>

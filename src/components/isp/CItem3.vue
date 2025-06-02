@@ -7,7 +7,6 @@
     <button 
       class="card-carousel--nav__left"
       @click="moveCarousel(-1)"
-      :disabled="atHeadOfList"
     >
       &lt;
     </button>
@@ -39,7 +38,6 @@
     <button 
       class="card-carousel--nav__right"
       @click="moveCarousel(1)"
-      :disabled="atEndOfList"
     >
       &gt;
     </button>
@@ -65,6 +63,11 @@ export default {
   { key: "type5", routerlink: "/worktwo", image: require(`@/assets/mcu3.png`), tag: "12" }
 ]);
 
+    // ➤ 計算最大 offset（最後一頁的位置）
+    const getMaxOffset = () => {
+      return -(paginationFactor.value * (items.value.length - windowSize.value));
+    };
+
     const atEndOfList = computed(() => {
       return currentOffset.value <= -(paginationFactor.value * (items.value.length - windowSize.value));
     });
@@ -74,10 +77,22 @@ export default {
     });
 
     const moveCarousel = (direction) => {
-      if (direction === 1 && !atEndOfList.value) {
-        currentOffset.value -= paginationFactor.value;
-      } else if (direction === -1 && !atHeadOfList.value) {
-        currentOffset.value += paginationFactor.value;
+      const maxOffset = -(paginationFactor.value * (items.value.length - windowSize.value));
+
+      if (direction === 1) {
+        // 向右滑
+        if (atEndOfList.value) {
+          currentOffset.value = 0; // 回到第一頁
+        } else {
+          currentOffset.value -= paginationFactor.value;
+        }
+      } else if (direction === -1) {
+        // 向左滑
+        if (atHeadOfList.value) {
+          currentOffset.value = maxOffset; // 滑到最後一頁
+        } else {
+          currentOffset.value += paginationFactor.value;
+        }
       }
     };
 
@@ -95,12 +110,13 @@ export default {
       // 根據視窗大小和卡片數量計算 paginationFactor
       cardWidth.value = document.querySelector('.card-carousel--card').offsetWidth;
       paginationFactor.value = cardWidth.value + 30; // 卡片寬度加上間距
-      // 確保 currentOffset 不超過範圍
-      if (currentOffset.value < -(paginationFactor.value * (items.value.length - windowSize.value))) {
-        currentOffset.value = -(paginationFactor.value * (items.value.length - windowSize.value));
+      // 修正 offset，不超過範圍
+      const maxOffset = getMaxOffset();
+      if (currentOffset.value < maxOffset) {
+        currentOffset.value = maxOffset;
+      } else if (currentOffset.value > 0) {
+        currentOffset.value = 0;
       }
-      // 確保第一個卡片的位置與邊緣對齊
-      currentOffset.value = 0;
     };
 
     onMounted(() => {
@@ -282,5 +298,15 @@ a {
     line-height: 1.25rem; /* 20px */
     top: 5rem; /* 80px */
   }
+
+  @media (max-width: 768px) {
+  .card-carousel--nav__left,
+  .card-carousel--nav__right {
+    width: 2.5rem;       /* 40px */
+    height: 2.5rem;      /* 40px */
+    font-size: 1.25rem;  /* 20px */
+    line-height: 2.5rem; /* 40px */
+  }
+}
 }
 </style>

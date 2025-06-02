@@ -1,27 +1,42 @@
 <template>
-  <div class="card-carousel-wrapper">
-    <router-link :to="item.path" v-for="item in items" :key="item.title" class="card-link">
-      <div 
-        class="card" 
-        :class="{ active: isActive(item.path) }" 
-        :style="getCardStyle(item.path)"
+  <div class="sidebar-wrapper">
+    <!-- 選單按鈕：僅手機顯示 -->
+    <button class="menu-toggle d-md-none" @click="toggleMenu">
+      ☰ 選單
+    </button>
+
+    <!-- 卡片列表：手機選單展開才顯示，桌機永遠顯示 -->
+    <div class="card-carousel-wrapper" v-if="!isMobile || showMenu">
+      <router-link
+        :to="item.path"
+        v-for="item in items"
+        :key="item.title"
+        class="card-link"
+        @click="onSelect"
       >
-        <div class="card-content">
-          <div class="card-icon">
-            <i class="bi" :class="item.icon"></i>
-          </div>
-          <div class="card-item">
-            <div class="card-title"><h3>{{ $t(item.titleKey) }}</h3></div>
-            <div class="card-number">
-              <p class="number">{{ item.number }}</p>
-              <div class="number-line"></div>
+        <div
+          class="card"
+          :class="{ active: isActive(item.path) }"
+          :style="getCardStyle(item.path)"
+        >
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="bi" :class="item.icon"></i>
+            </div>
+            <div class="card-item">
+              <div class="card-title"><h3>{{ $t(item.titleKey) }}</h3></div>
+              <div class="card-number">
+                <p class="number">{{ item.number }}</p>
+                <div class="number-line"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </router-link>
+      </router-link>
+    </div>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -29,62 +44,84 @@ export default {
   data() {
     return {
       items: [
-          {
-            titleKey: 'sidebar_isp.partAll',
-            path: '/partAll',
-            icon: 'bi-house-fill',
-            color: '#D10000'
-          },
-          {
-            titleKey: 'sidebar_isp.home',
-            path: '/parthome',
-            icon: 'bi-person-fill',
-            color: '#2894FF'
-          },
-          {
-            titleKey: 'sidebar_isp.hcm',
-            path: '/partone',
-            icon: 'bi-graph-up-arrow',
-            color: '#0035CE'
-          },
-          {
-            titleKey: 'sidebar_isp.cost',
-            path: '/parttwo',
-            icon: 'bi-diagram-3-fill',
-            color: '#FDC607'
-          },
-          {
-            titleKey: 'sidebar_isp.analysis',
-            path: '/partthree',
-            icon: 'bi-layout-text-window-reverse',
-            color: '#4E9E47'
-          },
-          {
-            titleKey: 'sidebar_isp.tax',
-            path: '/partfour',
-            icon: 'bi bi-layers',
-            color: '#FA5015'
-          }
-        ]
-    };
+        {
+          titleKey: 'sidebar_isp.partAll',
+          path: '/partAll',
+          icon: 'bi-house-fill',
+          color: '#D10000'
+        },
+        {
+          titleKey: 'sidebar_isp.home',
+          path: '/parthome',
+          icon: 'bi-person-fill',
+          color: '#2894FF'
+        },
+        {
+          titleKey: 'sidebar_isp.hcm',
+          path: '/partone',
+          icon: 'bi-graph-up-arrow',
+          color: '#0035CE'
+        },
+        {
+          titleKey: 'sidebar_isp.cost',
+          path: '/parttwo',
+          icon: 'bi-diagram-3-fill',
+          color: '#FDC607'
+        },
+        {
+          titleKey: 'sidebar_isp.analysis',
+          path: '/partthree',
+          icon: 'bi-layout-text-window-reverse',
+          color: '#4E9E47'
+        },
+        {
+          titleKey: 'sidebar_isp.tax',
+          path: '/partfour',
+          icon: 'bi bi-layers',
+          color: '#FA5015'
+        }
+      ],
+      isMobile: false,
+      showMenu: false
+    }
+  },
+  mounted() {
+    this.isMobile = window.innerWidth <= 768
+    window.addEventListener('resize', this.checkMobile)
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkMobile)
   },
   methods: {
     isActive(path) {
-      return this.$route.path === path;
+      return this.$route.path === path
     },
     getCardStyle(path) {
-      const activeItem = this.items.find(item => item.path === path);
+      const activeItem = this.items.find(item => item.path === path)
       if (this.isActive(path) && activeItem) {
         return {
           backgroundColor: activeItem.color,
           color: 'white'
-        };
+        }
       }
-      return {};
+      return {}
+    },
+    toggleMenu() {
+      this.showMenu = !this.showMenu
+    },
+    onSelect() {
+      if (this.isMobile) this.showMenu = false
+    },
+    checkMobile() {
+      this.isMobile = window.innerWidth <= 768
+      if (!this.isMobile) {
+        this.showMenu = false
+      }
     }
   }
-};
+}
 </script>
+
 
 <style scoped>
 .card-carousel-wrapper {
@@ -159,7 +196,6 @@ a {
   text-decoration: none;
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   .card {
     width: 10rem; /* 160px */
@@ -182,5 +218,32 @@ a {
 }
 .card-icon i{
   font-size: 60px;
+}
+
+.sidebar-wrapper {
+  width: 100%;
+}
+
+.menu-toggle {
+  background-color: #fa5015;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: none;
+}
+
+.menu-toggle:hover {
+  background-color: #e04b10;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
 }
 </style>
